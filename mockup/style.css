@@ -1,0 +1,170 @@
+/* ====GLOBAL STYLE==== */
+
+body {
+    background-color: #F8F8F8;
+}
+
+div.container {
+    width: 960px;
+    padding: 10px 50px 20px;
+    background-color: white;
+    margin: 20px auto;
+    box-shadow: 1px 0px 10px, -1px 0px 10px;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    font-family: mitr, mitr;
+    clear: both;
+}
+
+#footer {
+    text-align: right;
+    margin-top: 20px;
+}
+
+
+/* =====HEADER===== */
+
+#header {
+    /* width: 1000px; */
+    margin-left: auto;
+    margin-right: auto;
+    height: 60px;
+    background-color: #FBBB14;
+}
+
+#logo {
+    font-size: 42px;
+    float: left;
+    text-shadow: 1px 2px #C0C0C0;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+
+/* =====NAVIGATION===== */
+
+nav {
+    width: 500px;
+    float: left;
+    clear: both;
+}
+
+ul {
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+nav li a {
+    float: left;
+    background-color: #E3E3E3;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 20px;
+}
+
+nav li a:hover {
+    background-color: #757575;
+    color: white;
+}
+
+
+/* ======TABLE====== */
+
+table {
+    font-family: mitr, mitr;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #1481d2;
+    color: #ffffff;
+}
+
+
+/* ======PESAN====== */
+
+.pesan {
+    background-color: #C0FFA9;
+    padding: 10px 15px;
+    margin: 0 0 20px 0;
+    border: 1px solid green;
+    box-shadow: 1px 0px 3px green;
+    text-align: center;
+}
+
+.error {
+    background-color: #FFECEC;
+    padding: 10px 15px;
+    margin: 0 0 20px 0;
+    border: 1px solid red;
+    box-shadow: 1px 0px 3px red;
+}
+
+
+/* ====SEARCH BOX==== */
+
+#search {
+    font-size: 20px;
+    width: 340px;
+    float: right;
+    margin: 20px 0px;
+    background-color: #E3E3E3;
+}
+
+#search p {
+    margin: 0px;
+    padding: 8px 20px;
+}
+
+
+/* ====FORM==== */
+
+#form_produk p {
+    margin: 0;
+}
+
+#form_produk fieldset {
+    padding: 20px;
+}
+
+#form_produk input,
+#form_produk select {
+    margin-bottom: 10px;
+}
+
+#form_produk label {
+    width: 110px;
+    float: left;
+    margin-right: 10px;
+}
+
+#form_produk [readonly] {
+    background-color: #F3F3F3;
+}
+
+
+/* ====PAGE==== */
+
+#paging p {
+    font-family: mitr, mitr;
+    margin-left: auto;
+    margin-right: auto;
+}
