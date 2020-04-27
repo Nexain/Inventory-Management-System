@@ -12,6 +12,10 @@ div.container {
     box-shadow: 1px 0px 10px, -1px 0px 10px;
 }
 
+a {
+    white-space: nowrap;
+}
+
 h1,
 h2,
 h3 {
