@@ -31,8 +31,12 @@
   else {
   // bukan dari form pencairan
   // siapkan query untuk menampilkan seluruh data dari tabel produk
-    $query = "SELECT * FROM warehouse_log ORDER BY TAG_ID LIMIT $mulai,$baris";
-    }
+    $query  = "SELECT warehouse.WH_LOCATION AS lokasi, products.PRODUCT_NAME AS nama_produk, COUNT(warehouse_log.PRODUCT_ID) AS jumlah ";
+    $query .= "FROM warehouse_log LEFT JOIN warehouse ON warehouse_log.WH_ID = warehouse.WH_ID ";
+    $query .= "LEFT JOIN products ON warehouse_log.PRODUCT_ID = products.PRODUCT_ID ";
+    $query .= "GROUP BY PRODUCT_NAME, WH_LOCATION ";
+    $query .= "ORDER BY WH_LOCATION ASC LIMIT $mulai,$baris";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +58,6 @@ Hello World
     <li><a href="tampil_produk.php">Log Produk</a></li>
     <li><a href="lokasi_produk.php">Produk per Lokasi</a>
     <li><a href="all_produk.php">Semua Produk</a>
-    <li><a href="new_produk.php">New Produk</a>
   </ul>
   </nav>
   <form id="search" action="tampil_produk.php" method="get">
@@ -73,11 +76,9 @@ Hello World
 ?>
  <table border="1">
   <tr>
-  <th>Tag ID</th>
-  <th>ID Produk</th>
-  <th>Warehouse ID</th>
-  <th>Tanggal Masuk</th>
-  <th>Tanggal Keluar</th>
+  <th>Lokasi</th>
+  <th>Nama Produk</th>
+  <th>Jumlah</th>
   </tr>
   <?php
   // jalankan query
@@ -94,11 +95,9 @@ Hello World
   while($data = mysqli_fetch_assoc($result))
   { 
     echo "<tr>";
-    echo "<td>$data[TAG_ID]</td>";
-    echo "<td>$data[PRODUCT_ID]</td>";
-    echo "<td>$data[WH_ID]</td>";
-    echo "<td>$data[DATE_IN]</td>";
-    echo "<td>$data[DATE_OUT]</td>";
+    echo "<td>$data[lokasi]</td>";
+    echo "<td>$data[nama_produk]</td>";
+    echo "<td>$data[jumlah]</td>";
     echo "</tr>";
   }
   
