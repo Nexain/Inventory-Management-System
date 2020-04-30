@@ -16,3 +16,8 @@ pwd   :anisette
 
 ## Database
 we are using local database instead of domain hosting for development phase
+
+## RUN API
+### Windows
+set FLASK_APP=api_all.py
+flask run
