@@ -9,7 +9,6 @@ Inventory - Automation Product Detection System
 - Muhammad Salman Al Hafizh
 - Sophia Gianina Daeli
 
-
 ## Akun 000Webhost
 email : imandasr99@gmail.com
 pwd   :anisette
@@ -17,10 +16,17 @@ pwd   :anisette
 ## Database
 we are using local database instead of domain hosting for development phase
 
+## HOW TO RUN
+- Install MySQL, Python, Flask
+- Run MySQL
+- Run API on your PC
+- Run RFID Driver on your Raspi
+- If eror encountered, please try to fix it (it works on us :) )
+
 ## RUN API
-### Windows
+### Windows CMD
 ```
-set FLASK_APP=api_all.py
+set FLASK_APP=Api.py
 flask run
 ```
 
@@ -32,10 +38,10 @@ none
 product_id, category_id, product_name
 #### POST - api/wh-log/increase-stock
 tag_id, product_id, wh_id
-#### POST - api/wh-log/decrease-stock
+#### PUT - api/wh-log/decrease-stock
 tag_id
 
-## DRIVER RFID
+## RFID DRIVER FOR RASPI
 #### Add Stock
 ```
 python AddStock.py
@@ -45,6 +51,10 @@ python AddStock.py
 python DecStock.py
 ```
 
+### TESTED ON
+- Raspberry PI 2 Model B+
+- Windows 10
+- RFID RC522
 
 
 
