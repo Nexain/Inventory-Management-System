@@ -65,7 +65,7 @@ def api_increase_stock():
     connection.commit()
     return make_response(jsonify({'status': 'SUCCESS'}), 200)
 
-@app.route('/api/wh-log/decrease-stock', methods=['POST'])
+@app.route('/api/wh-log/decrease-stock', methods=['PUT'])
 def api_decrease_stock():
     if request.args is None:
         abort(400)

@@ -35,4 +35,16 @@ tag_id, product_id, wh_id
 #### POST - api/wh-log/decrease-stock
 tag_id
 
+## DRIVER RFID
+#### Add Stock
+```
+python AddStock.py
+```
+### Decrease Stock
+```
+python DecStock.py
+```
+
+
+
 
