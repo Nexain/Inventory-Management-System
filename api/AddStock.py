@@ -1,26 +1,30 @@
-from time import sleep
 import sys
-# from mfrc522 import SimpleMFRC522
-# reader = SimpleMFRC522()
+import RPi.GPIO as GPIO
 # tambahan
 import httplib2
 import json
 
-address = 'http://localhost:5000'
+from mfrc522 import SimpleMFRC522
+reader = SimpleMFRC522()
+
+address = 'http://192.168.43.205:5000/api/wh-log/increase-stock?tag_id='
 wh_id = "BDG"
 
 try:
     # while(1):
+        wh_id = input("Input Warehouse ID: ")
         print("Hold a tag near the reader")
-        #   id, text = reader.read()
-        id = "10"
-        text = "FP0002"
-        print("ID: %s\nText: %s" % (id,text))
+        id, text = reader.read()
+        # id = "10"
+        # text = "FP0002"
+        tag_id = str(id)
+        product_id = text[0:6]
+        print("TAG ID: %s\nPRODUCT ID: %s" % (tag_id, product_id))
 
         # Making a POST Request /increase
         print ("Making a POST request to /api/wh-log/increase-stock...")
         try:
-            url = address + "/api/wh-log/increase-stock?tag_id=%s&product_id=%s&wh_id=%s" % (id, text, wh_id)
+            url = address + tag_id + "&product_id=" + product_id + "&wh_id=" + wh_id
             h = httplib2.Http()
             resp, result = h.request(url, 'POST')
             obj = json.loads(result)
@@ -35,5 +39,7 @@ try:
             print ("Test 1 PASS: Succesfully Made POST Request to /api/wh-log/increase-stock")
 
 except KeyboardInterrupt:
-    # GPIO.cleanup()
-    raise
+    print("Keyboard interrupt")
+
+finally:
+    GPIO.cleanup()
