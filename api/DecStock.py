@@ -1,20 +1,25 @@
-from time import sleep
 import sys
-# from mfrc522 import SimpleMFRC522
-# reader = SimpleMFRC522()
+import RPi.GPIO as GPIO
 # tambahan
 import httplib2
 import json
 
-address = 'http://localhost:5000'
+from mfrc522 import SimpleMFRC522
+reader = SimpleMFRC522()
+
+GPIO.cleanup()
+GPIO.setwarnings(False)
+
+address = 'http://192.168.43.205:5000'
 wh_id = "BDG"
 
 try:
     # while(1):
+        wh_id = input("Input Warehouse ID: ")
         print("Hold a tag near the reader")
-        #   id, text = reader.read()
-        id = "1"
-        text = "FP0002"
+        id, text = reader.read()
+        #id = "1"
+        #text = "FP0002"
         print("ID: %s\nText: %s" % (id,text))
 
         #Making a PUT Request /decrease
@@ -34,5 +39,7 @@ try:
             print ("Test 4 PASS: Succesfully Made PUT Request to /api/wh-log/decrease-stock")
 
 except KeyboardInterrupt:
-    # GPIO.cleanup()
-    raise
+    print("Keyboard interrupt")
+
+finally:
+    GPIO.cleanup()
