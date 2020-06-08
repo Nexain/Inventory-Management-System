@@ -7,6 +7,9 @@ import json
 from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
 
+GPIO.cleanup()
+GPIO.setwarnings(False)
+
 address = 'http://192.168.43.205:5000/api/wh-log/increase-stock?tag_id='
 wh_id = "BDG"
 
