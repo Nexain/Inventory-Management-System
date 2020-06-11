@@ -5,7 +5,7 @@ import datetime
 
 app = Flask(__name__)
 
-connection = pymysql.connect(host = '192.168.0.10',
+connection = pymysql.connect(host = '192.168.0.11',
                                 user = 'somreve',
                                 password = 'password',
                                 db = 'inventory',

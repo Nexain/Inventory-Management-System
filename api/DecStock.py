@@ -10,7 +10,7 @@ reader = SimpleMFRC522()
 GPIO.cleanup()
 GPIO.setwarnings(False)
 
-address = 'http://192.168.43.205:5000'
+address = 'http://192.168.0.11:5000'
 wh_id = "BDG"
 
 try:

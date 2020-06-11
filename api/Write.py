@@ -11,6 +11,8 @@ try:
         print("Now place your tag to write")
         reader.write(text)
         print("Written")
-
+except KeyboardInterrupt:
+	print("Interrupted")
 finally:
 	GPIO.cleanup()
+	GPIO.setwarnings(False)
