@@ -4,12 +4,13 @@ Inventory - Automation Product Detection System
 ## Anggota kelompok
 - Afif Rana Muhammad 	(171524001)
 - Ahmad Aji Naufal Ali 	(171524002)
-- Alifia Syalsabila
-- Mumuh Kustino Muharram
-- Muhammad Salman Al Hafizh
-- Sophia Gianina Daeli
+- Alifia Syalsabila (171524003)
+- Imanda Syahrul Ramadhan (171524013)
+- Muhammad Salman Al Hafizh (171524024)
+- Mumuh Kustino Muharram (171524025)
+- Sophia Gianina Daeli (171524029)
 
-## Akun 000Webhost
+## 000Webhost Account
 email : imandasr99@gmail.com
 pwd   :anisette
 
@@ -23,6 +24,25 @@ we are using local database instead of domain hosting for development phase
 - Run RFID Driver on your Raspi
 - If eror encountered, please make sure your host on Api.py, mockup, and driver is correct
 
+## Dependencies
+Flask
+```
+pip install flask
+pip instal flask-sqlalchemy
+```
+PyMySQL
+```
+pip install PyMySQL
+```
+httplib2
+```
+pip install httplib2
+```
+RFID Module (Raspberry Pi)
+```
+pip install mfrc522
+```
+
 ## RUN API
 [Flask Quickstart](https://flask.palletsprojects.com/en/1.1.x/quickstart/).
 
@@ -31,6 +51,7 @@ we are using local database instead of domain hosting for development phase
 set FLASK_APP=Api.py
 flask run
 ```
+
 
 ## API
 ### PARAM
