@@ -11,11 +11,16 @@ Inventory - Automation Product Detection System
 - Sophia Gianina Daeli (171524029)
 
 ## 000Webhost Account
-email : imandasr99@gmail.com
-pwd   :anisette
+Akun 000Webhost email : ideen.ausgehen@gmail.com
+pwd : somreve-polban17
 
 ## Database
-we are using local database instead of domain hosting for development phase
+name : id12940060_inventorymanagement
+user : id12940060_somreve
+password : 0XDipESIs/Y9#~@B
+host : localhost
+
+(please note that we are using local database instead of domain hosting for development phase)
 
 ## QUICK START
 - Install MySQL, Python, Flask
